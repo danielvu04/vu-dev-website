@@ -9,7 +9,9 @@ function App() {
     <div>
       <Navbar />
       <Hero />
-      <FeaturedProjects />
+      <div style={{ padding: '20px 20px', backgroundColor: '#f4f4f4' }}>
+        <FeaturedProjects />
+      </div>
       <Footer />
     </div>
   );
