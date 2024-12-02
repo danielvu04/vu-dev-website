@@ -5,7 +5,7 @@ This is a personal portfolio website built with React to showcase projects, skil
 ## Features
 - **Responsive Design**: Works on desktop, tablet, and mobile devices.
 - **Reusable Components**: Modular React components for scalability.
-- **Modern Styling**: Styled using Tailwind CSS and custom CSS.
+- **Modern Styling**: Styled using Tailwind and custom CSS.
 
 ## Technologies Used
 - **React**: JavaScript library for building user interfaces.
