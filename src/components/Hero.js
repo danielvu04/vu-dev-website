@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import '../styles/Hero.css';
+import droneImage from '../assets/images/DroneSim.png';
 
 function Hero() {
   // Slider settings
@@ -18,7 +19,7 @@ function Hero() {
       <div className="slideshow-container">
         <Slider {...settings}>
           <div>
-            <img src="https://via.placeholder.com/1200x600" alt="Slide 1" />
+            <img src={droneImage} alt="Drone Delivery Simulation" />
           </div>
           <div>
             <img src="https://via.placeholder.com/1200x600" alt="Slide 2" />
