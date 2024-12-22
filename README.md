@@ -1,17 +1,53 @@
 # Vu Website Portfolio
 
-This is a personal portfolio website built with React to showcase projects, skills, and professional experience.
+This is a personal portfolio website built with React to showcase projects, skills, and professional experience
+
+---
 
 ## Features
 - **Responsive Design**: Works on desktop, tablet, and mobile devices.
 - **Reusable Components**: Modular React components for scalability.
-- **Modern Styling**: Styled using Tailwind CSS and custom CSS.
+- **Modern Styling**: Styled using Tailwind and custom CSS.
+
+---
 
 ## Technologies Used
 - **React**: JavaScript library for building user interfaces.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
 - **ESLint & Prettier**: Code quality and formatting tools.
 - **Jest**: Testing framework.
+
+---
+
+## Running the Simulation
+
+### Manually
+1. Clone the repository
+```
+git clone https://github.com/danielvu04/vu-dev-website
+```
+2. Navigate into the repository
+```
+cd vu-dev-website
+```
+3. Call npm start in the terminal
+```
+npm start
+```
+4. Launched at [http://localhost:3000/](http://localhost:3000/)
+
+### Docker ([Repository](https://hub.docker.com/repository/docker/vud1394/website_portfolio))
+1. Install [docker](https://docs.docker.com/engine/install/)
+2. Run in terminal
+```
+docker build -t vud1394/website_portfolio
+```
+```
+docker run --rm -p 3000:3000 vud1394/websiteportfolio
+```
+3. Launched at [http://localhost:3000/](http://localhost:3000)
+
+---
 
 ## Folder Structure
 - **src/components/**: Reusable React components.

@@ -8,17 +8,35 @@ html {
     padding: 0;
   }
   
-  .hero {
-    height: 100vh; /* Hero occupies full viewport height */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: right;
-    padding: 0 10vw;
-    background: 
-      -webkit-linear-gradient(25deg, rgba(41, 41, 41, 0.9) 55%, rgba(255, 255, 255, 1) 0%);
-  }
+.hero {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Move content to the right */
+  padding: 0.5 5vw; /* Control padding from the left/right */
+  background: -webkit-linear-gradient(25deg, rgba(41, 41, 41, 0.9) 60%, rgba(255, 255, 255, 1) 0%);
+}
+
+.slideshow-container {
+  width: 47%; /* Take up less width */
+  height: 50%; /* Keep slideshow within a reasonable height */
+  margin-left: 2vw; /* Add margin from the left edge */
+}
+
+.slideshow-container img {
+  width: 100%; /* Make the image take up the full width */
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the whole container */
+}
+
+.hero-content {
+  width: 45%; /* Limit width of content */
+  text-align: right; /* Align text to the right */
+  z-index: 1; /* Keep hero content above the slideshow */
+  padding-right: 2vw; /* Add padding to ensure content doesn’t touch the edge */
+}
+
 
   h1 {
     margin: 20px;
