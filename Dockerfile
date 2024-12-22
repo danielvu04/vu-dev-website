@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Build the React app for production
-RUN npm run build
+CMD ["npm", "start"]
