@@ -8,20 +8,21 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      'service_xxpjmc6', // Replace with your EmailJS service ID
-      'template_zcmj6gp', // Replace with your EmailJS template ID
-      form.current,
-      'E11RfgqBs9gD9EhzY' // Replace with your EmailJS public key
-    )
-    .then((result) => {
-      console.log(result.text);
-      alert('Message sent successfully!');
-    })
-    .catch((error) => {
-      console.log(error.text);
-      alert('Failed to send message. Please try again.');
-    });
+    emailjs
+      .sendForm(
+        'service_xxpjmc6', // Replace with your EmailJS service ID
+        'template_zcmj6gp', // Replace with your EmailJS template ID
+        form.current,
+        'E11RfgqBs9gD9EhzY' // Replace with your EmailJS public key
+      )
+      .then((result) => {
+        console.log(result.text);
+        alert('Message sent successfully!');
+      })
+      .catch((error) => {
+        console.log(error.text);
+        alert('Failed to send message. Please try again.');
+      });
   };
 
   return (
@@ -42,8 +43,8 @@ function Contact() {
       </form>
       <div className="contact-links">
         <p>Or connect with me:</p>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-          LinkedIn
+        <a href="https://www.linkedin.com/in/daniel-vu04" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-linkedin" style={{ fontSize: '24px', color: '#0a66c2' }}></i> LinkedIn
         </a>
       </div>
     </section>
