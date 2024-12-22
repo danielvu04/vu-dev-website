@@ -1,15 +1,16 @@
 import React from 'react';
+import '../styles/Navbar.css'; // Import the CSS file
 
 function Navbar() {
   return (
-    <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 20px', background: '#333', color: '#fff' }}>
-      <h1>DanielVu.dev</h1>
-      <ul style={{ display: 'flex', listStyle: 'none', gap: '15px' }}>
-        <li><a href="#home" style={{ color: 'white', textDecoration: 'none' }}>Home</a></li>
-        <li><a href="#about" style={{ color: 'white', textDecoration: 'none' }}>About</a></li>
-        <li><a href="#projects" style={{ color: 'white', textDecoration: 'none' }}>Projects</a></li>
-        <li><a href="#contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</a></li>
-      </ul>
+    <nav className="navbar">
+      <h1 className="navbar-title">DanielVu.dev</h1>
+      <div className="navbar-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   );
 }
