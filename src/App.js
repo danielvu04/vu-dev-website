@@ -5,6 +5,7 @@ import About from './components/About';
 import Hero from './components/Hero';
 import FeaturedProjects from './components/FeaturedProjects';
 import Contact from './components/Contact';
+import Skills from './components/Skills';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
               <Hero />
               <div style={{ padding: '20px 20px', backgroundColor: '#f4f4f4' }}>
                 <FeaturedProjects />
+                <Skills /> {/* Add the Skills section here */}
               </div>
             </div>
           }
