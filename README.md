@@ -2,6 +2,8 @@
 
 This is a personal portfolio website built with React to showcase projects, skills, and professional experience
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d29e7462-bc8f-4b42-b98f-38f5dfc17b5c/deploy-status)](https://app.netlify.com/sites/vuwebsiteportfolio/deploys)
+
 ---
 
 ## Features

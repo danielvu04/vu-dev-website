@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import '../styles/Hero.css';
 import droneImage from '../assets/images/DroneSim.png';
@@ -13,6 +14,8 @@ function Hero() {
     slidesToScroll: 1, // Number of slides to scroll at once
     arrows: true, // Arrows for navigation
   };
+
+  const navigate = useNavigate(); // Hook to navigate between pages
 
   return (
     <section className="hero">
@@ -33,8 +36,8 @@ function Hero() {
         <h1>Hi, I'm Daniel Vu</h1>
         <p>Welcome to my portfolio website.</p>
         <div>
-          <button>View My Work</button>
-          <button>Contact Me</button>
+        <button onClick={() => navigate('/projects')}>View My Work</button>
+        <button onClick={() => navigate('/contact')}>Contact Me</button>
         </div>
       </div>
     </section>
