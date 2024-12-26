@@ -33,4 +33,19 @@
     border-color: #007acc; /* Soft Blue */
     color: #007acc; /* Highlight color on hover */
   }
-  
+
+@media (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+  }
+  .navbar-title {
+    font-size: 1.05rem; /* Adjust the size */
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 10px; /* Add spacing between links */
+  }
+}
