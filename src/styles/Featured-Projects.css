@@ -1,0 +1,50 @@
+.featured-projects {
+  padding: 50px 20px;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px; /* Adds spacing between project cards */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.docker-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #007acc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+  }
+
+  .project-card {
+    width: 80%; /* Adjusts width for better display on smaller screens */
+    margin-bottom: 20px; /* Adds spacing between cards */
+  }
+
+	p {
+    font-size: 1.25rem;
+    margin: 20px;
+    color: #333;
+    text-align: center;
+  }
+
+}
