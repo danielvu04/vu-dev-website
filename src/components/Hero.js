@@ -35,7 +35,7 @@ function Hero() {
       <div className="hero-content">
         <h1>Hi, I'm Daniel Vu</h1>
         <p>Welcome to my portfolio website.</p>
-        <div>
+        <div class="hero-buttons">
         <button onClick={() => navigate('/projects')}>View My Work</button>
         <button onClick={() => navigate('/contact')}>Contact Me</button>
         </div>
