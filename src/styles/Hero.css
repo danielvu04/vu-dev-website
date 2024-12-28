@@ -67,64 +67,64 @@ button:hover {
 
 @media (max-width: 768px) {
 
-.hero-content {
-  color: #fff;
-  order: 1; /* Show text first */
-  width: 100%; /* Limit width of content */
-  text-align: left; /* Align text to the right */
-  z-index: 1; /* Keep hero content above the slideshow */
-  padding-right: 1vw; /* Add padding to ensure content doesn’t touch the edge */
-  padding-top: 5vh; /* Adjust this value to move it down */
+  .hero-content {
+    color: #fff;
+    order: 1; /* Show text first */
+    width: 100%; /* Limit width of content */
+    text-align: left; /* Align text to the right */
+    z-index: 1; /* Keep hero content above the slideshow */
+    padding-right: 1vw; /* Add padding to ensure content doesn’t touch the edge */
+    padding-top: 5vh; /* Adjust this value to move it down */
 
-}
+  }
 
-.hero {
-  position: relative;
-  height: 80vh;
-  display: flex; /* Use flexbox layout */
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center align items horizontally */
-  justify-content: center; /* Center align items vertically */
-  text-align: center; /* Center align text */
-  background:  url('../assets/images/japaneseTree.jpg') center center / cover no-repeat;
-}
+  .hero {
+    position: relative;
+    height: 80vh;
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items horizontally */
+    justify-content: center; /* Center align items vertically */
+    text-align: center; /* Center align text */
+    background:  url('../assets/images/japaneseTree.jpg') center center / cover no-repeat;
+  }
 
-.slideshow-container {
-  order: 2;
-  width: 100%;
-  margin: 30%;
-}
+  .slideshow-container {
+    order: 2;
+    width: 100%;
+    margin: 30%;
+  }
 
-h1 {
-  margin: 20px;
-  font-weight: 200;
-  color: #fff;
-  text-align: center;
-  font-size: clamp(2rem, 8vw, 4rem); /* Responsive font size */
-}
+  h1 {
+    margin: 20px;
+    font-weight: 200;
+    color: #fff;
+    text-align: center;
+    font-size: clamp(2rem, 8vw, 4rem); /* Responsive font size */
+  }
 
-.hero-content p {
-  color: #fff !important; /* Ensure white text for the Hero section */
-  font-size: 1.25rem;
-  margin: 20px;
-}
+  .hero-content p {
+    color: #fff !important; /* Ensure white text for the Hero section */
+    font-size: 1.25rem;
+    margin: 20px;
+  }
 
-.hero-buttons {
-  display: flex; /* Use flexbox layout */
-  justify-content: center; /* Center align the buttons */
-  gap: 10%; /* Evenly space the buttons */
-  margin-top: 20px; /* Add spacing between text and buttons */
-}
+  .hero-buttons {
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center align the buttons */
+    gap: 10%; /* Evenly space the buttons */
+    margin-top: 20px; /* Add spacing between text and buttons */
+    padding: 0 10px; /* Optional padding for extra spacing from edges */
+  }
 
-button {
-  padding: 10px 20px;
-  margin: 0px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #fff; /* White button for contrast */
-  color: #333;
-  transition: background-color 0.3s, color 0.3s;
-}
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff; /* White button for contrast */
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+  }
 }
