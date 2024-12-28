@@ -32,7 +32,7 @@ function Hero() {
       <div className="hero-content">
         <h1>Hi, I'm Daniel Vu</h1>
         <p>Welcome to my portfolio website.</p>
-        <div>
+        <div class="hero-buttons">
           <button>View My Work</button>
           <button>Contact Me</button>
         </div>
