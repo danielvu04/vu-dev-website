@@ -12,8 +12,12 @@ function FeaturedProjects() {
       dockerLink: 'https://hub.docker.com/repository/docker/vud1394/drone_sim',
     },
     { 
-      name: 'Project 2', 
-      description: 'Description of project 2.', 
+      name: 'Portfolio Website', 
+      description: `
+        A responsive portfolio site built with React to showcase my projects and skills. 
+        Features include a dynamic slideshow, clean design, and easy navigation.
+      `, 
+      githubLink: 'https://github.com/danielvu04/vu-dev-website',
     },
     { name: 'Project 3', description: 'Description of project 3.' },
   ];
@@ -34,6 +38,16 @@ function FeaturedProjects() {
                 className="docker-link"
               >
                 View on Docker Hub
+              </a>
+            )}
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-link"
+              >
+                View on GitHub
               </a>
             )}
           </div>
