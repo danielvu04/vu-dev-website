@@ -18,7 +18,6 @@ function Navbar() {
       // Navigate to the homepage and scroll after navigation
       navigate('/');
       setTimeout(() => {
-        const featuredSection = document.getElementById('featured-projects');
         if (featuredSection) {
           featuredSection.scrollIntoView({ behavior: 'smooth' });
         }
