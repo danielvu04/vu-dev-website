@@ -34,6 +34,21 @@
     color: #007acc; /* Highlight color on hover */
   }
 
+  .navbar-links button {
+    all: unset; /* Resets all browser-specific styles for the button */
+    color: white; /* Match link color */
+    cursor: pointer; /* Pointer cursor for consistency with links */
+    font-size: 1rem; /* Match link font size */
+    text-decoration: none; /* Remove underline */
+    border-bottom: 2px solid transparent; /* Add underline effect like links */
+    transition: border-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  }
+
+  .navbar-links button:hover {
+    border-color: #007acc; /* Soft Blue */
+    color: #007acc; /* Highlight color on hover */
+  }
+
 @media (max-width: 768px) {
   .navbar {
     align-items: flex-start;
