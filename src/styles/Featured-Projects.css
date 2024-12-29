@@ -40,6 +40,14 @@
   text-align: center;
 }
 
+.featured-projects h2 {
+  font-size: 2rem; /* Adjust the size as needed */
+  font-weight: 600; /* Slightly bold for emphasis */
+  text-align: center; /* Center the heading */
+  margin-bottom: 30px; /* Space below the heading */
+  color: #333; /* Neutral color for readability */
+}
+
 @media (max-width: 768px) {
   .projects {
     flex-direction: column; /* Stacks items vertically */

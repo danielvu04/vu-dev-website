@@ -23,11 +23,15 @@ function FeaturedProjects() {
   ];
 
   return (
-    <section className="featured-projects">
+    <section id="featured-projects" className="featured-projects">
       <h2>Featured Projects</h2>
       <div className="projects">
         {projects.map((project, index) => (
-          <div className="project-card" key={index}>
+          <div 
+            className="project-card" 
+            key={index}
+            id={project.name.toLowerCase().replace(/\s+/g, '-') + '-project'} // Generate a unique ID
+          >
             <h3>{project.name}</h3>
             <p>{project.description}</p>
             {project.dockerLink && (
