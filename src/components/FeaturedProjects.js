@@ -26,7 +26,7 @@ function FeaturedProjects() {
         oncoming vehicles. Features dynamic gameplay with increasing difficulty and
         real-time scoring.
       `, 
-      githubLink: 'https://github.com/danielvu04/vu-dev-website',
+      githubLink: 'https://github.com/danielvu04/pygame_car_game',
     },
   ];
 
