@@ -1,0 +1,31 @@
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+  }
+  
+  footer p {
+    margin: 0;
+    color: #fff;
+    font-size: 1rem; 
+  }
+  
+  footer div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow links to wrap */
+    gap: 10px; /* Space between links */
+    margin-top: 10px;
+  }
+  
+  footer a {
+    color: white;
+    font-size: 1rem; 
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline; /* Optional hover effect */
+  }
+  
