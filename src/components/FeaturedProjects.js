@@ -19,7 +19,15 @@ function FeaturedProjects() {
       `, 
       githubLink: 'https://github.com/danielvu04/vu-dev-website',
     },
-    { name: 'Project 3', description: 'Description of project 3.' },
+    { 
+      name: 'Car Pygame', 
+      description: `
+        A game built with Pygame where players control a car to dodge 
+        oncoming vehicles. Features dynamic gameplay with increasing difficulty and
+        real-time scoring.
+      `, 
+      githubLink: 'https://github.com/danielvu04/vu-dev-website',
+    },
   ];
 
   return (

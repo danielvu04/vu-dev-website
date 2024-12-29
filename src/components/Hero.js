@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import '../styles/Hero.css';
 import droneImage from '../assets/images/DroneSim.png';
 import websiteImage from '../assets/images/websiteportfolio.png';
+import carImage from '../assets/images/pygame_car_game.png';
 
 function Hero() {
 
@@ -52,8 +53,8 @@ function Hero() {
           <div onClick={() => scrollToProject('portfolio-website-project')}>
             <img src={websiteImage} alt="Portfolio Website" />
           </div>
-          <div>
-            <img src="https://via.placeholder.com/1200x600" alt="Slide 3" />
+          <div onClick={() => scrollToProject('car-pygame-project')}>
+            <img src={carImage} alt="Car Pygame" />
           </div>
         </Slider>
       </div>
