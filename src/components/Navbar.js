@@ -7,7 +7,6 @@ function Navbar() {
   const location = useLocation();
   const scrollToProjects = () => {
     const onHomePage = location.pathname === '/';
-    const featuredSection = document.getElementById('featured-projects');
     if (onHomePage) {
       // Scroll directly to the section if on the homepage
       const featuredSection = document.getElementById('featured-projects');
