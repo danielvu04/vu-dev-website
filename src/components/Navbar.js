@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import '../styles/Navbar.css'; // Import the CSS file
+import '../styles/Navbar.css';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -27,7 +27,6 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h1 className="navbar-title">DanielVu.dev</h1>
       <div className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
