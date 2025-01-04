@@ -7,6 +7,7 @@ import FeaturedProjects from './components/FeaturedProjects';
 import Contact from './components/Contact';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
+import Resume from './components/Resume';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
       <Footer />
     </Router>

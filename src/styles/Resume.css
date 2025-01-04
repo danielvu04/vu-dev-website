@@ -1,0 +1,52 @@
+/* General styling for the resume page */
+.resume-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light gray background */
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .resume-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; 
+  }
+  
+  .resume-iframe {
+    width: 80%; /* Adjust to fit your layout */
+    height: 80vh; /* Ensure it's visible without scrolling */
+    border: none; /* Remove iframe borders */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    border-radius: 10px; /* Optional rounded corners */
+  }
+
+
+  .resume-download-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007acc; /* Blue background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume-download-link:hover {
+    background-color: #005f99; /* Darker blue on hover */
+  }
+  
+@media (max-width: 768px) {
+	.resume-iframe {
+		width: 95%; /* Adjust width for smaller screens */
+		height: 70vh; /* Adjust height for smaller screens */
+	}
+}
+  

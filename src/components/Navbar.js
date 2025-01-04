@@ -34,6 +34,7 @@ function Navbar() {
           Projects
         </button>
         <Link to="/contact">Contact</Link>
+        <Link to="/resume">Resume</Link>
       </div>
     </nav>
   );
