@@ -4,49 +4,76 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background-color: #f4f4f4; /* Light gray background */
+    padding: 70px 20px;
+    background-color: #050816; /* Matching Projects section */
     min-height: 100vh;
     margin: 0;
-  }
+}
   
-  .resume-title {
+.resume-title {
     font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333; /* Dark text color */
+    margin-bottom: 30px;
+    color: #fff;
     text-align: center;
-    font-family: 'Roboto', sans-serif; 
-  }
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.resume-title::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
   
-  .resume-iframe {
-    width: 80%; /* Adjust to fit your layout */
-    height: 80vh; /* Ensure it's visible without scrolling */
-    border: none; /* Remove iframe borders */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    border-radius: 10px; /* Optional rounded corners */
-  }
+.resume-iframe {
+    width: 80%;
+    height: 80vh;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
 
-
-  .resume-download-link {
+.resume-download-link {
     display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007acc; /* Blue background */
-    color: white;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: rgba(0, 238, 255, 0.2);
+    color: var(--glow-color, #0ef);
+    border: 1px solid var(--glow-color, #0ef);
     text-decoration: none;
     border-radius: 5px;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
   
-  .resume-download-link:hover {
-    background-color: #005f99; /* Darker blue on hover */
-  }
+.resume-download-link:hover {
+    background-color: rgba(0, 238, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
   
 @media (max-width: 768px) {
-	.resume-iframe {
-		width: 95%; /* Adjust width for smaller screens */
-		height: 70vh; /* Adjust height for smaller screens */
-	}
+    .resume-iframe {
+        width: 95%; /* Adjust width for smaller screens */
+        height: 70vh; /* Adjust height for smaller screens */
+    }
+    
+    .resume-title {
+        font-size: 2rem;
+    }
 }
   

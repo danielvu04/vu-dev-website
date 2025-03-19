@@ -12,25 +12,27 @@ import Resume from './components/Resume';
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <Hero />
-              <div style={{ padding: '20px 20px', backgroundColor: '#f4f4f4' }}>
-                <FeaturedProjects />
-                <Skills /> {/* Add the Skills section here */}
-              </div>
-            </div>
-          }
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/resume" element={<Resume />} />
-      </Routes>
-      <Footer />
+      <div className="app-container">
+        <Navbar />
+        <main className="content">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div>
+                  <Hero />
+                  <FeaturedProjects />
+                  <Skills />
+                </div>
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/resume" element={<Resume />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --navbar-height: 60px;
+  --glow-color: #0ef;
+  --bg-dark: #050816;
+  --bg-darker: #030712;
+}
+
 .App {
   text-align: center;
 }
@@ -43,25 +50,71 @@
   }
 }
 
+/* App container and content styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.content {
+  flex: 1;
+  padding-top: var(--navbar-height);
+  margin: 0;
+  width: 100%;
+}
+
+/* Default page padding for routes other than home */
+.content > *:not(:first-child) {
+  padding-top: 30px;
+  margin-top: var(--navbar-height);
+}
+
+/* Remove background and padding from the container div in App.js */
+.content > div > div {
+  padding: 0 !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+}
+
+/* Tailwind utility classes */
+.p-5 {
+  padding: 1.25rem;
+}
+
+.bg-gray-100 {
+  background-color: var(--bg-dark);
+}
+
 html, body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
   margin: 0;
   padding: 0;
   width: 100%; /* Ensure elements stay within the viewport */
+  background-color: var(--bg-dark);
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--bg-dark);
+  color: white;
 }
 
 h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700; /* Bold for headings */
+  color: white;
 }
 
 p {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; /* Regular for paragraphs */
+  color: rgba(255, 255, 255, 0.85);
 }

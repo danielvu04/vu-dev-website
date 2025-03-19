@@ -1,69 +1,212 @@
 .featured-projects {
-  padding: 50px 20px;
+  padding: 70px 0;
+  background-color: #050816;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .projects {
   display: flex;
-  justify-content: space-around;
-  gap: 20px; /* Adds spacing between project cards */
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .project-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  width: 30%;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(40, 40, 45, 0.75);
+  padding: 25px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
 }
 
-.docker-link {
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--glow-color, #0ef), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 238, 255, 0.15);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--glow-color, #0ef);
+}
+
+.project-card p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tech-tag {
+  background-color: rgba(0, 238, 255, 0.15);
+  color: var(--glow-color, #0ef);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 20px;
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #007acc;
-  color: #fff;
+  border: 1px solid rgba(0, 238, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.docker-link, .github-link, .website-link {
+  display: inline-block;
+  padding: 8px 18px;
   text-decoration: none;
   border-radius: 4px;
-  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.website-link {
+  background-color: rgba(0, 238, 255, 0.2);
+  color: var(--glow-color, #0ef);
+  border: 1px solid var(--glow-color, #0ef);
 }
 
 .github-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #007acc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.docker-link {
+  background-color: rgba(0, 122, 204, 0.2);
+  color: #007acc;
+  border: 1px solid rgba(0, 122, 204, 0.5);
+}
+
+.website-link:hover, .github-link:hover, .docker-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.website-link:hover {
+  background-color: rgba(0, 238, 255, 0.3);
+}
+
+.github-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.docker-link:hover {
+  background-color: rgba(0, 122, 204, 0.3);
 }
 
 .featured-projects h2 {
-  font-size: 2rem; /* Adjust the size as needed */
-  font-weight: 600; /* Slightly bold for emphasis */
-  text-align: center; /* Center the heading */
-  margin-bottom: 30px; /* Space below the heading */
-  color: #333; /* Neutral color for readability */
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.featured-projects h2::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  bottom: -10px;
+  left: 25%;
+  background-color: var(--glow-color, #0ef);
+}
+
+@media (max-width: 1200px) {
+  .projects {
+    gap: 20px;
+  }
+  
+  .project-card {
+    width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
+  .featured-projects {
+    padding: 50px 0;
+  }
+  
   .projects {
-    flex-direction: column; /* Stacks items vertically */
-    align-items: center; /* Centers items horizontally */
+    flex-direction: column;
+    align-items: center;
   }
 
   .project-card {
-    width: 80%; /* Adjusts width for better display on smaller screens */
-    margin-bottom: 20px; /* Adds spacing between cards */
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 30px;
   }
-
-	p {
-    font-size: 1.25rem;
-    margin: 20px;
-    color: #333;
-    text-align: center;
+  
+  .featured-projects h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
-
 }
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 20px 15px;
+  }
+  
+  .project-tech {
+    gap: 5px;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}
+

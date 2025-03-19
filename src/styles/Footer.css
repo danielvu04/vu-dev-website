@@ -1,31 +1,69 @@
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #333;
-    color: #fff;
+    padding: 25px 0;
+    background-color: rgba(40, 40, 45, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   footer p {
     margin: 0;
-    color: #fff;
-    font-size: 1rem; 
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
   }
   
   footer div {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* Allow links to wrap */
-    gap: 10px; /* Space between links */
-    margin-top: 10px;
+    gap: 30px; /* Space between links */
+    margin-top: 15px;
   }
   
   footer a {
-    color: white;
-    font-size: 1rem; 
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
     text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  footer a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--glow-color, #0ef);
+    transition: width 0.3s ease;
   }
   
   footer a:hover {
-    text-decoration: underline; /* Optional hover effect */
+    color: var(--glow-color, #0ef);
+    text-decoration: none;
+  }
+  
+  footer a:hover::after {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    footer {
+      padding: 20px 0;
+    }
+    
+    footer div {
+      gap: 20px;
+    }
   }
   

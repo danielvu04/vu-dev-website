@@ -1,73 +1,160 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Slider from 'react-slick';
+import { ReactTyped } from 'react-typed';
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 import '../styles/Hero.css';
-import droneImage from '../assets/images/DroneSim.png';
-import websiteImage from '../assets/images/websiteportfolio.png';
-import carImage from '../assets/images/pygame_car_game.png';
 
 function Hero() {
+  const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  // Detect screen width
-  const isMobile = window.innerWidth <= 768; // Define mobile breakpoint
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
 
-  // Slider settings
-  const settings = {
-    dots: !isMobile, // Show dots only if not mobile
-    infinite: true, // Infinite loop
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Number of slides to show at once
-    slidesToScroll: 1, // Number of slides to scroll at once
-    arrows: !isMobile, // Arrows for navigation
-  };
-
-  const navigate = useNavigate(); // Hook to navigate between pages
-
-  const scrollToProject = (projectId) => {
-    const project = document.getElementById(projectId);
-    if (project) {
-      project.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'center', // Center the project card in the viewport
-      });
-
-      // Add highlight class
-      project.classList.add('highlight');
-
-      // Remove highlight after a delay
-      setTimeout(() => {
-        project.classList.remove('highlight');
-      }, 3000); // 3 seconds
-    } else {
-      console.error('Project not found:', projectId);
+  const scrollToProjects = () => {
+    const featuredProjects = document.getElementById('featured-projects');
+    if (featuredProjects) {
+      featuredProjects.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <section className="hero">
-      <div className="slideshow-container">
-        <Slider {...settings}>
-          <div onClick={() => scrollToProject('drone-delivery-simulation-project')}>
-            <img src={droneImage} alt="Drone Delivery Simulation" />
+      {/* Grid Background */}
+      <div className="grid-background"></div>
+      
+      {/* Particles Background */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: { enable: false },
+          background: {
+            color: {
+              value: "transparent",
+            },
+          },
+          fpsLimit: 60,
+          particles: {
+            color: {
+              value: "#0ef",
+            },
+            links: {
+              color: "#0ef",
+              distance: 150,
+              enable: true,
+              opacity: 0.3,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              outModes: {
+                default: "bounce",
+              },
+              random: true,
+              speed: 1.5,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                area: 800,
+              },
+              value: isMobile ? 30 : 80,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: ["circle", "triangle", "polygon"],
+            },
+            size: {
+              value: { min: 1, max: 3 },
+            },
+          },
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: ["grab", "bubble", "repulse"],
+              },
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 140,
+                links: {
+                  opacity: 0.5,
+                },
+              },
+              bubble: {
+                distance: 200,
+                size: 5,
+                duration: 2,
+                opacity: 0.8,
+              },
+              repulse: {
+                distance: 100,
+                duration: 0.4,
+              },
+              push: {
+                quantity: 4,
+              },
+            },
+          },
+          detectRetina: true,
+        }}
+        className="particles-container"
+      />
+      
+      <div className="hero-content-wrapper">
+        <div className="hero-content">
+          <h1>Hi, I'm Daniel Vu</h1>
+          <div className="typed-container">
+            <ReactTyped
+              strings={[
+                "Full Stack Developer",
+                "Software Engineer",
+                "Problem Solver",
+                "Tech Enthusiast"
+              ]}
+              typeSpeed={70}
+              backSpeed={50}
+              backDelay={1000}
+              loop
+              className="typed-text"
+            />
           </div>
-          <div onClick={() => scrollToProject('portfolio-website-project')}>
-            <img src={websiteImage} alt="Portfolio Website" />
+          
+          <div className="hero-buttons">
+            <button 
+              className="glow-button primary"
+              onClick={scrollToProjects}
+            >
+              View My Work
+            </button>
+            <button 
+              className="glow-button secondary"
+              onClick={() => navigate('/contact')}
+            >
+              Contact Me
+            </button>
           </div>
-          <div onClick={() => scrollToProject('car-pygame-project')}>
-            <img src={carImage} alt="Car Pygame" />
-          </div>
-        </Slider>
-      </div>
-      <div className="hero-content">
-        <h1>Hi, I'm Daniel Vu</h1>
-        <p>Welcome to my portfolio website.</p>
-        <div class="hero-buttons">
-        <button onClick={() => 
-          document
-            .getElementById('featured-projects')
-            .scrollIntoView({ behavior: 'smooth' })}> View My Work
-        </button>
-        <button onClick={() => navigate('/contact')}>Contact Me</button>
         </div>
       </div>
     </section>
