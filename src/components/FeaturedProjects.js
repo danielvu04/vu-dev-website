@@ -11,7 +11,7 @@ function FeaturedProjects() {
         and Firebase Auth. Includes Stripe payment processing and AWS deployment.
       `,
       githubLink: 'https://github.com/danielvu04/TenantManagementSystem',
-      websiteLink: 'https://tenant-management-demo.vercel.app',
+      // websiteLink: 'https://tenant-management-demo.vercel.app',
       tech: ['Angular', 'Express.js', 'MongoDB', 'Firebase Auth', 'Stripe', 'AWS']
     },
     {
@@ -27,20 +27,26 @@ function FeaturedProjects() {
     {
       name: 'Drone Delivery Simulation',
       description: `
-        Simulated drone delivery system featuring dynamic route planning,
-        battery tracking, and autonomous recharging to optimize operations.
-      `,
+        Simulated drone delivery system featuring dynamic route planning, battery tracking, 
+        and autonomous recharging to optimize logistics. Built with C++ for pathfinding, 
+        TypeScript for visualization, and deployed using Docker. The system integrates 
+        real-time data collection and follows design patterns (Decorator, Factory) to 
+        enhance scalability and maintainability.
+        `,
       dockerLink: 'https://hub.docker.com/repository/docker/vud1394/drone_sim',
-      tech: ['Java', 'Docker', 'Algorithm Design']
+      tech: ['C++', 'Typescript', 'Docker', 'Jira', 'Design Patterns']
     },
     { 
       name: 'Portfolio Website', 
       description: `
-        A responsive portfolio site built with React to showcase my projects and skills. 
-        Features include a dynamic slideshow, clean design, and easy navigation.
+      A responsive portfolio built with React.js and Tailwind CSS to showcase 
+      projects and skills. Designed with a clean UI and intuitive navigation 
+      for a seamless experience. Deployed on Netlify, leveraging Git for 
+      version control and automated updates. Includes interactive components 
+      and animations for enhanced engagement.  
       `, 
       githubLink: 'https://github.com/danielvu04/vu-dev-website',
-      tech: ['React', 'Tailwind CSS', 'JavaScript']
+      tech: ['React.js', 'Tailwind CSS', 'JavaScript', 'Agile']
     },
   ];
 

@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 70px 0 150px; /* Extra padding at bottom to prevent tooltip cutoff */
-    background-color: #050816; /* Match the Featured Projects section */
+    padding: 70px 0 150px;
+    background-color: #050816;
     color: #fff;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
     overflow: visible; /* Allow tooltips to overflow */
     position: relative;
+    z-index: 10; /* Base z-index for section */
   }
   
   .skills-heading-container {
@@ -28,7 +29,7 @@
     letter-spacing: 2px;
     position: relative;
     padding-bottom: 25px;
-    margin: 0 0 20px 0;
+    margin: 0 0 0 0;
   }
   
   .skills-section h2::after {
@@ -47,9 +48,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    max-width: 1100px; /* Increased to accommodate the larger circles */
-    gap: 30px 40px;
-    padding: 0 20px;
+    max-width: 1100px;
+    gap: 50px 40px; /* Increased vertical gap */
+    padding: 0 0px;
   }
   
   .skill-category {
@@ -57,11 +58,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 0;
+    margin-bottom: 20px; /* Add margin between categories */
     padding: 20px;
     border-radius: 8px;
     background-color: rgba(40, 40, 45, 0.3);
     backdrop-filter: blur(5px);
+    position: relative; /* Ensure proper stacking */
+    z-index: 5; /* Base z-index */
   }
   
   .skill-category h3 {
@@ -112,7 +115,7 @@
     -webkit-backdrop-filter: blur(8px);
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
-    z-index: 1;
+    z-index: 10; /* Increased base z-index */
     padding: 6px; /* Increased padding */
   }
   
@@ -172,34 +175,39 @@
     transform: scale(1.15);
     box-shadow: 0 0 20px rgba(0, 238, 255, 0.4);
     transition: all 0.3s ease-in-out;
-    z-index: 10; /* Higher z-index on hover */
+    z-index: 9999; /* Very high z-index on hover to ensure tooltip visibility */
   }
   
   /* Tooltip styling fixes */
   .skill::after {
     content: attr(data-description);
     position: absolute;
-    top: calc(100% + 15px); /* Increased distance from icon */
+    top: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.98);
     color: #fff;
-    padding: 10px 15px;
+    padding: 12px 15px;
     border-radius: 5px;
     font-size: 0.8rem;
     white-space: normal;
-    width: max-content;
     max-width: 200px;
+    width: max-content;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 100; /* Very high z-index for tooltips */
-    border: 1px solid var(--glow-color, #0ef);
-    pointer-events: none; /* Prevent tooltip from interfering with hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 20000;
+    border: 2px solid var(--glow-color, #0ef);
+    pointer-events: none;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.95);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    isolation: isolate; /* Isolate the tooltip from surrounding elements */
+    will-change: opacity, visibility; /* Optimize for animation */
+    transform-style: preserve-3d; /* Create a new stacking context */
   }
   
-  /* Add arrow to tooltip */
+  /* Make sure the tooltip arrow has same z-index */
   .skill::before {
     content: '';
     position: absolute;
@@ -208,11 +216,11 @@
     transform: translateX(-50%);
     border-width: 10px 8px;
     border-style: solid;
-    border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.95) transparent;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 110;
+    z-index: 20000; /* Match tooltip z-index */
     pointer-events: none;
   }
   
@@ -222,7 +230,26 @@
     visibility: visible;
   }
   
-  /* Responsive styles */
+  /* Edge positioning for tooltips */
+  .skill.edge-left::after {
+    left: 0;
+    transform: none;
+    margin-left: -5px; /* Slight adjustment to align with skill edge */
+  }
+  
+  .skill.edge-right::after {
+    left: auto;
+    right: 0;
+    transform: none;
+    margin-right: -5px; /* Slight adjustment to align with skill edge */
+  }
+  
+  /* Remove the mobile tooltip overlay */
+  .tooltip-overlay {
+    display: none;
+  }
+  
+  /* Responsive styles with improved tooltip handling */
   @media (max-width: 1200px) {
     .skills-container {
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -232,18 +259,23 @@
   
   @media (max-width: 992px) {
     .skills-categories {
-      grid-template-columns: 1fr; /* One column on smaller screens */
-      gap: 30px;
+      grid-template-columns: 1fr;
+      gap: 60px; /* Larger gap for single column layout */
     }
     
     .skills-container {
       max-width: 550px;
     }
+    
+    .skills-section {
+      padding-bottom: 150px; /* Increase padding on smaller screens */
+    }
   }
   
   @media (max-width: 768px) {
     .skills-section {
-      padding: 50px 0 100px;
+      padding: 50px 0 80px;
+      margin-bottom: 40px; /* Increased space to prevent next section overlap */
     }
     
     .skills-container {
@@ -270,17 +302,31 @@
       gap: 20px;
       max-width: 460px;
     }
+    
+    .skill::after {
+      width: 180px;
+      max-width: 70vw;
+      font-size: 0.75rem;
+    }
+    
+    /* Adjust tooltip positioning for edge cases on mobile */
+    .skill.edge-left::after {
+      left: -10px; /* Adjusted margin to align with skill radius */
+    }
+    
+    .skill.edge-right::after {
+      right: -10px; /* Adjusted margin to align with skill radius */
+    }
   }
   
   @media (max-width: 480px) {
     .skills-container {
-      gap: 15px 12px;
-      max-width: 380px;
+      gap: 10px 8px;
     }
     
     .skill, .skill-placeholder, .skill-long-text {
-      width: 85px;
-      height: 85px;
+      width: 75px;
+      height: 75px;
     }
     
     .skill p {
@@ -288,16 +334,25 @@
     }
     
     .skills-categories {
-      gap: 40px;
+      gap: 25px;
     }
     
     .skills-row {
       gap: 12px;
       max-width: 380px;
     }
+    
+    .skill:hover {
+      transform: scale(1.1); /* Smaller scale on mobile to prevent overflow */
+    }
+    
+    .skill::after {
+      width: 160px;
+      max-width: 65vw;
+      font-size: 0.7rem;
+    }
   }
-  
-  .skills-row {
+    .skills-row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,3 +362,16 @@
     max-width: 590px; /* Increased container width */
   }
   
+  /* Make tooltip more visible */
+  .skill:hover::after {
+    opacity: 1;
+    visibility: visible;
+    filter: drop-shadow(0 0 10px rgba(0, 238, 255, 0.3)); /* Add glow effect */
+  }
+  
+  /* Fix for tooltips near the frameworks section */
+  .skill-category:nth-child(3),
+  .skill-category:nth-child(4) {
+    margin-top: 30px; /* Add more space for the bottom categories */
+  }
+

@@ -4,7 +4,7 @@ import '../styles/Footer.css';
 function Footer() {
   return (
     <footer>
-      <p>&copy; 2024 Daniel Vu. All rights reserved.</p>
+      <p>&copy; 2025 Daniel Vu. All rights reserved.</p>
       <div>
         <a
           href="https://www.linkedin.com/in/daniel-vu04"
