@@ -176,6 +176,23 @@ function Skills() {
     }
   ];
 
+  // Helper function to handle tooltip position
+  const handleTooltipClick = (e) => {
+    // Prevent default behavior
+    e.stopPropagation();
+    
+    // Get the current skill element
+    const skill = e.currentTarget;
+    
+    // Toggle a visible class for this specific tooltip
+    skill.classList.toggle('tooltip-visible');
+    
+    // Remove the class after 2.5 seconds
+    setTimeout(() => {
+      skill.classList.remove('tooltip-visible');
+    }, 2500);
+  };
+
   return (
     <section className="skills-section" id="skills">
       <div className="skills-heading-container">
@@ -187,29 +204,22 @@ function Skills() {
           <div key={categoryIndex} className="skill-category">
             <h3>{category.title}</h3>
             <div className="skills-container">
-              {category.skills.map((skill, skillIndex) => {
-                // Calculate position within the row to determine edge classes
-                const posIndex = skillIndex % 4;
-                const isLeftEdge = posIndex === 0;
-                const isRightEdge = posIndex === 3;
-                
-                return (
-                  <div 
-                    key={skillIndex} 
-                    className={`skill ${
-                      skill.name === "Raspberry Pi" || 
-                      skill.name === "Machine Learning" || 
-                      skill.name === "RESTful API" ? 
-                      "skill-long-text" : ""
-                    } ${isLeftEdge ? 'edge-left' : ''} ${isRightEdge ? 'edge-right' : ''}`}
-                    data-description={skill.description}
-                    data-position={posIndex}
-                  >
-                    <img src={skill.icon} alt={skill.name} />
-                    <p>{skill.name}</p>
-                  </div>
-                );
-              })}
+              {category.skills.map((skill, skillIndex) => (
+                <div 
+                  key={skillIndex} 
+                  className={`skill ${
+                    skill.name === "Raspberry Pi" || 
+                    skill.name === "Machine Learning" || 
+                    skill.name === "RESTful API" ? 
+                    "skill-long-text" : ""
+                  }`}
+                  data-description={skill.description}
+                  onClick={handleTooltipClick}
+                >
+                  <img src={skill.icon} alt={skill.name} />
+                  <p>{skill.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         ))}
