@@ -87,6 +87,11 @@ function Skills() {
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg',
           description: 'An end-to-end platform for machine learning.',
         },
+        { 
+          name: 'ROS 2', 
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ros/ros-original.svg',
+          description: 'Robot Operating System for building robotic applications.',
+        },
       ]
     },
     {
@@ -171,6 +176,16 @@ function Skills() {
           name: 'Machine Learning', 
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg',
           description: 'AI techniques that enable systems to learn from data.',
+        },
+        { 
+          name: 'Virtual/Augmented Reality', 
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg',
+          description: 'Immersive technologies for creating virtual and augmented experiences.',
+        },
+        { 
+          name: 'Robotics/Computer Vision', 
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg',
+          description: 'Integration of computer vision and robotics for autonomous systems.',
         }
       ]
     }
@@ -210,7 +225,9 @@ function Skills() {
                   className={`skill ${
                     skill.name === "Raspberry Pi" || 
                     skill.name === "Machine Learning" || 
-                    skill.name === "RESTful API" ? 
+                    skill.name === "RESTful API" ||
+                    skill.name === "Virtual/Augmented Reality" ||
+                    skill.name === "Robotics/Computer Vision" ? 
                     "skill-long-text" : ""
                   }`}
                   data-description={skill.description}

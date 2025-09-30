@@ -4,6 +4,17 @@ import '../styles/Featured-Projects.css';
 function FeaturedProjects() {
   const projects = [
     {
+      name: 'AI4Earth Summer Research Program',
+      description: `
+        Developed LSTM-based sequence-to-sequence models for stream temperature prediction 
+        using multi-modal datasets (weather, reservoir, and stream data). Built PyTorch workflows 
+        for training, finetuning, and evaluation, with visualization tools for model comparison. 
+        Presented research findings to peers and faculty mentors.
+      `,
+      organization: 'University of Minnesota, National Science Foundation',
+      tech: ['PyTorch', 'LSTM', 'Sequence-to-Sequence', 'Data Preprocessing', 'Python', 'Machine Learning']
+    },
+    {
       name: 'Tenant Management Website',
       description: `
         A full-stack web application for managing rental properties with integrated rent collection, 
@@ -61,6 +72,14 @@ function FeaturedProjects() {
             id={project.name.toLowerCase().replace(/\s+/g, '-') + '-project'} // Generate a unique ID
           >
             <h3>{project.name}</h3>
+            {project.organization && (
+              <div className="project-organization">
+                <span className="organization-name">{project.organization}</span>
+                {project.duration && (
+                  <span className="project-duration">{project.duration}</span>
+                )}
+              </div>
+            )}
             <p>{project.description}</p>
             
             {project.tech && (

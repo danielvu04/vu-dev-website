@@ -59,6 +59,30 @@
   color: var(--glow-color, #0ef);
 }
 
+.project-organization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgba(0, 238, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 238, 255, 0.2);
+}
+
+.organization-name {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.project-duration {
+  font-size: 0.8rem;
+  color: var(--glow-color, #0ef);
+  font-style: italic;
+}
+
 .project-card p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
